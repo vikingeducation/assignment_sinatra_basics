@@ -5,13 +5,16 @@ get '/' do
 end
 
 get '/boss' do
+  # string=""
+  # erb :view, :locals => { :string => string }
   erb :view
 end
 
 post '/boss' do
   input = params[:input].upcase
-  rude_string = "WHAT DO YOU MEAN, '#{input}'???? YOU'RE FIRED!!"
-  erb :view, :locals => { :rude_string => rude_string }
+  @string = "WHAT DO YOU MEAN, '#{input}'???? YOU'RE FIRED!!"
+  erb :view
+  # erb :view
 end
 
 get '/rockpaperscissors' do
@@ -20,6 +23,6 @@ end
 
 post '/rockpaperscissors' do
   move = params[:move]
-  outcome = "test"
-  erb :rps, :locals => { :outcome => outcome }
+  @outcome = "test"
+  erb :rps
 end  
