@@ -1,6 +1,6 @@
 
-module Help
-def helper(answer)
+module GameCore
+def find_winner(answer)
   ai = ["rock","paper","scissors"].shuffle[0]
   return result = "It is Tie! Both played #{answer}" if ai == answer 
 
