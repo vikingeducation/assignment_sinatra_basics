@@ -16,5 +16,9 @@ post '/end' do
   answer = params[:choice]
   result = find_winner(answer)
 
-  "<h1>'#{result}'</h1>"
+  erb :results, :locals => { :result => result }
+end
+
+post '/game' do
+  erb :game
 end
