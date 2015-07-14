@@ -1,10 +1,19 @@
 <h1>Rock, Paper, Scissors</h1>
 
 <form action="/rockpaperscissors" method="post">
-  <input type="radio" name="rock">
-  <input type="radio" name="paper">
-  <input type="radio" name="scissors">
-  <input type="submit" value="move">
+  <input type="radio" name="input" value="rock">Rock
+  <br>
+  <input type="radio" name="input" value="paper">Paper
+  <br>
+  <input type="radio" name="input" value="scissors">Scissors
+  <br>
+  <br>
+  <br>
+  <input type="submit" value="name">
 </form>
+
+
+<p>You throw: <%= @move %></p>
+<p>Computer throws: <%= @comp_move %></p>
 
 <%= @outcome %>

@@ -22,7 +22,18 @@ get '/rockpaperscissors' do
 end
 
 post '/rockpaperscissors' do
-  move = params[:move]
-  @outcome = "test"
+  @comp_move = %W[ rock paper scissors].sample
+  @move = params[:input]
+  @outcome = "You win"  if  (@move == "rock" && @comp_move == "scissors")  ||
+                            (@move == "scissors" && @comp_move == "paper") ||
+                            (@move == "paper" && @comp_move == "rock")
+
+  @outcome = "You lose" if  (@move == "rock" && @comp_move == "paper")     ||
+                            (@move == "scissors" && @comp_move == "rock")  ||
+                            (@move == "paper" && @comp_move == "scissors")
+
+  @outcome = "Draw"     if  (@move == @comp_move)
+
+
   erb :rps
 end  
