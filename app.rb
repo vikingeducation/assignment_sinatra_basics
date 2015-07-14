@@ -8,6 +8,6 @@ get '/boss' do
 end
 
 post '/boss' do
-	input = params[:our_input]
+	input = params[:our_input].upcase
 	erb :show_form_response, :locals => {:input => input}
 end
