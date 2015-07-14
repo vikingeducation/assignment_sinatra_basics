@@ -2,7 +2,7 @@
 #!/usr/bin/env ruby
 
 require 'sinatra'
-require_relative 'gamecore.rb'
+require 'gamecore'
 
 helpers GameCore 
 
