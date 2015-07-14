@@ -21,7 +21,8 @@ end
 
 post '/rps' do
   input = params[:rps]
+  comp = comp_move
   "#{input}"
-  erb :winner, :locals => {winner: check_winner(comp_move, input)}
+  erb :winner, :locals => {winner: check_winner(comp, input), comp: comp}
 
 end
