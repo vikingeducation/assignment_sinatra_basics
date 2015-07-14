@@ -38,7 +38,10 @@ post '/play_rps' do
 
   response = find_winner(choice, ai_choice)
 
+  full_words = {r: "Rock", p: "Paper", s: "Scissors"}
 
-  erb :play_rps, :locals => {:response => response, :player_choice => choice, :ai_choice => ai_choice}
+  erb :play_rps, :locals => {:response => response, :player_choice => full_words[choice.to_sym], :ai_choice => full_words[ai_choice.to_sym]}
 
 end
+
+
