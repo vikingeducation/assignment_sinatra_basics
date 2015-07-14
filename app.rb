@@ -24,16 +24,28 @@ end
 post '/rockpaperscissors' do
   @comp_move = %W[ rock paper scissors].sample
   @move = params[:input]
-  @outcome = "You win"  if  (@move == "rock" && @comp_move == "scissors")  ||
-                            (@move == "scissors" && @comp_move == "paper") ||
-                            (@move == "paper" && @comp_move == "rock")
+  redirect to('/rockpaperscissors/win')  if  (@move == "rock" && @comp_move == "scissors")  ||
+                                             (@move == "scissors" && @comp_move == "paper") ||
+                                             (@move == "paper" && @comp_move == "rock")
 
-  @outcome = "You lose" if  (@move == "rock" && @comp_move == "paper")     ||
-                            (@move == "scissors" && @comp_move == "rock")  ||
-                            (@move == "paper" && @comp_move == "scissors")
+  redirect to('/rockpaperscissors/lose') if  (@move == "rock" && @comp_move == "paper")     ||
+                                             (@move == "scissors" && @comp_move == "rock")  ||
+                                             (@move == "paper" && @comp_move == "scissors")
 
-  @outcome = "Draw"     if  (@move == @comp_move)
+  redirect to('/rockpaperscissors/draw') if  (@move == @comp_move)
 
 
-  erb :rps
-end  
+  erb :rps_result
+end
+
+get '/rockpaperscissors/win' do
+  erb :rps_win
+end
+
+get '/rockpaperscissors/lose' do
+  erb :rps_lose
+end
+
+get '/rockpaperscissors/draw' do
+  erb :rps_draw
+end
