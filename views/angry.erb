@@ -1,0 +1,8 @@
+<form action="/angry" method="post">
+  <input type="text" name="input">
+  <input type="submit" value="sublime">
+</form>
+
+<% if input %>
+  <p>WHAT DO YOU MEAN,'<%= input.upcase %>'???? YOU'RE FIRED!!</p>
+<% end %>
