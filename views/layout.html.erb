@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>
+			<% title ||= 'Hello Sinatra!' %><%= title %>
+		</title>
+		<style>
+			body {
+				max-width: 960px;
+				margin: 0 auto;
+			}
+			h1 {
+				text-align: center;
+			}
+			input[type="text"] {
+				line-height: 2.5em;
+				vertical-align: center;
+				text-indent: 1em;
+				width: 512px;
+				border: 1px solid #111;
+				outline: none;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<%= yield %>
+	</body>
+</html>
