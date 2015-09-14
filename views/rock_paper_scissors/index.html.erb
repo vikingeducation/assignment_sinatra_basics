@@ -1,0 +1,46 @@
+<h1>Rock, Paper, Scissors</h1>
+
+<% if params[:error] %>
+<p style="color:red;">Oops, you gotta pick a hand!</p>
+<% end %>
+
+<form action="/rock-paper-scissors" method="post">
+	<div>
+		<label for="rps">Rock</label>
+		<input type="radio" name="rps" value="rock"/>
+	</div>
+	<div>
+		<label for="rps">Paper</label>
+		<input type="radio" name="rps" value="paper"/>
+	</div>
+	<div>
+		<label for="rps">Scissors</label>
+		<input type="radio" name="rps" value="scissors"/>
+	</div>
+	<button type="submit">SHOOT!</button>
+</form>
+
+<%
+if shoot
+partials = {
+	'rock' => :'rock_paper_scissors/rock.txt',
+	'paper' => :'rock_paper_scissors/paper.txt',
+	'scissors' => :'rock_paper_scissors/scissors.txt'
+}
+player = shoot[:player]
+computer = shoot[:computer]
+%>
+	<p>You: <%= player.capitalize %></p>
+	<pre><%= erb partials[player] %></pre>
+	<p>Computer: <%= computer.capitalize %></p>
+	<pre><%= erb partials[computer] %></pre>
+	<%
+	result = 'tied'
+	result = 'won' if shoot[:winner] == :player
+	result = 'lost' if shoot[:winner] == :computer
+	%>
+	<p>You <%= result %>!</p>
+<% end %>
+
+<br>
+<a href="/">Back to main menu</a>

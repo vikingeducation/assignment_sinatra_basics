@@ -1,0 +1,31 @@
+<h1>Welcome to the Angry Boss's office!</h1>
+
+<%
+message ||= nil
+unless message
+%>
+<p>
+	Break the awkward silence with a few words...
+</p>
+<% end %>
+
+<% if params[:error] %>
+<p style="color:red;">Oops, you gotta say something... your boss looks a bit miffed!</p>
+<% end %>
+
+<form action="/angry-boss" method="post">
+	<input type="text" name="angry_boss" placeholder="What say you to your angry boss?"/>
+	<button type="submit">Say it!</button>
+</form>
+
+<% if message %>
+	<p>
+		You: "<%= message %>"
+	</p>
+	<p>
+		Boss: "<%= "What do you mean, '#{message}'???? You're fired!".upcase %>"
+	</p>
+<% end %>
+
+<br>
+<a href="/">Back to main menu</a>
