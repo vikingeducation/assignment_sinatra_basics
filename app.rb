@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'erb'
 
-require './helpers/rps_helper.rb'
+require_relative 'helpers/rps_helper.rb'
 helpers RPSHelper
 
 enable :sessions
