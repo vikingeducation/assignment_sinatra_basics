@@ -1,10 +1,12 @@
 require 'sinatra'
 
-get '/' do 
+get '/boss' do 
   erb :form
 end
 
-post '/lol' do 
+post '/boss' do 
   output = "WHAT DO YOU MEAN, '#{params[:input].upcase}'???? YOU'RE FIRED!!"
-  erb :lol, :locals => {:output => output}
+  #redirect to("/boss?output=#{output}")
+  #passing param using redirect?
+  erb :boss, :locals => {:output => output}
 end
