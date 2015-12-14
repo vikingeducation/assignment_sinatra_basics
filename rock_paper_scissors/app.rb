@@ -12,5 +12,6 @@ end
 post '/play' do
   choice = params[:choice]
   computer_choice = computer_select_move
-  erb :result, locals: { choice: choice, computer_choice: computer_choice }
+  result = get_winner(choice, computer_choice)
+  erb :result, locals: { choice: choice, computer_choice: computer_choice, result: result }
 end
