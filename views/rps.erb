@@ -1,0 +1,36 @@
+<!doctype HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RPS</title>
+</head>
+<body>
+    <h1>Welcome to Rock, Paper, Scissors!</h1>
+    <p>Click and submit an option below to start playing!</p>
+
+    <form action="/" method="post">
+      <input type="radio" name="move" value="rock">Rock<br>
+      <input type="radio" name="move" value="paper">Paper<br>
+      <input type="radio" name="move" value="scissor">Scissors<br>
+      <input type="submit" value="Make Move!">
+    </form>
+
+    <% if defined? user_input %>
+      <% moves = ["rock", "paper", "scissor"] %>
+      <% computer_move = moves[rand(0..2)] %>
+      <% if user_input == computer_move %>
+        <h2>It's a Tie!</h2>
+        <h2><%= "Both picked #{user_input}" %></h2>
+      <% elsif user_input == "paper" && computer_move == "rock" || user_input == "rock" && computer_move == "scissor" || user_input == "scissor" && computer_move == "paper"%>
+        <h2>You win!</h2>
+        <h2><%= "You picked: #{user_input}" %></h2>
+        <h2><%= "Computer picked: #{computer_move}" %></h2>
+      <% else %>
+        <h2>Computer wins!</h2>
+        <h2><%= "You picked: #{user_input}" %></h2>
+        <h2><%= "Computer picked: #{computer_move}" %></h2>
+      <% end %>
+    <% end %>
+</body>
+</html>
