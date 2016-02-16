@@ -31,11 +31,14 @@
 
 require 'sinatra'
 
+get '/' do
+  redirect '/boss'
+end
+
 get '/boss' do
   erb :boss
 end
 
 post '/boss' do
-  message_upcased = params[:message].upcase
-  erb :message, locals: { message_upcased: message_upcased }
+  erb :message, locals: { message_upcased: params[:message].upcase }
 end
