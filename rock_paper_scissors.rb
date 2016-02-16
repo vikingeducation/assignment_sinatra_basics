@@ -12,16 +12,18 @@
 
 require 'sinatra'
 
+get '/' do
+  redirect '/rockpaperscissors'
+end
+
 get '/rockpaperscissors' do
   erb :rps_play
 end
 
 post '/move' do
-  players_move = params[:rps]
   moves = {0=>"ROCK",
            1=>"PAPER",
            2=>"SCISSORS"
           }
-  computers_move = moves[rand(3)]
-  erb :result, locals: { players_move: players_move, computers_move: computers_move}
+  erb :result, locals: { players_move: params[:rps], computers_move: moves[rand(3)]}
 end
