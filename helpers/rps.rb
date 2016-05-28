@@ -7,7 +7,6 @@ module RPS
   end
 
   def check_result(human, computer)
-    result = ""
     if human == computer
       result = "It's a tie! Both you and the computer chose #{human}."
     elsif MOVES[human] == computer
