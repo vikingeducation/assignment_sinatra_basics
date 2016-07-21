@@ -12,3 +12,22 @@ post '/boss_form' do
 
   erb :show_response, locals: {response: show_response}
 end
+
+get '/rps' do 
+  erb :rps
+end
+
+post '/rock_paper_scissors' do 
+  user_choice = params[:rps]
+  answers = {
+    r: 'p',
+    p: 's',
+    s: 'r'
+  }
+  # values defeat keys
+  computer_choice = %w(r p s).sample
+  if answers[user_choice] == computer_choice
+    puts "computer won"
+  else
+
+end
