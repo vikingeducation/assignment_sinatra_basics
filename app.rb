@@ -15,4 +15,5 @@ post '/boss' do
   input = params[:say_string]
 
   erb :show_shout, locals: { input: input }
+  
 end
