@@ -22,6 +22,10 @@ post '/boss' do
 
 end
 
+get '/rps' do
+  redirect to('/')
+end
+
 post '/rps' do
   play = params[:play]
   erb :play, locals: { victory: game_winner(play)  }

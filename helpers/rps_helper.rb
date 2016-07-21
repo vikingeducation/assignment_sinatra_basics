@@ -8,11 +8,11 @@ module RPSHelper
   def game_winner(play)
     computer = computer_pick
     if WINNING_COMBINATIONS[play] == computer
-      "you have won"
+      "It looks like you have won"
     elsif play == computer
-      "you have tied..."
+      "It looks like you have tied..."
     else
-      "well you lost......"
+      "Well, you lost......"
     end
   end
 
