@@ -1,0 +1,11 @@
+<form action = "rps" method = "post">
+  Choose a move
+  <input type = "radio" name = "rps_choices" value = "Rock">Rock
+  <input type = "radio" name = "rps_choices" value = "Paper">Paper
+  <input type = "radio" name = "rps_choices" value = "Scissors">Scissors
+  <input type = "submit" value = "Submit">
+</form>
+
+<% if result %>
+<%= result %>
+<% end %>
