@@ -8,7 +8,13 @@ helpers do
   end
 
   def winner(person, computer)
-
+    if person == computer
+      :tie
+    elsif WINNER[person] == computer
+      :lose
+    else
+      :win
+    end
   end
 end
 
@@ -26,6 +32,10 @@ get '/rps' do
 end
 
 post '/rps' do
-  @choice = params[:choice]
-  erb :rps_response, locals: {choice: @choice}
+  choice = params[:choice]
+  computer_choice = computer
+  outcome = winner(choice, computer_choice)
+  erb :rps_response, locals: {choice: choice,
+                              computer_choice: computer_choice,
+                              outcome: outcome}
 end
