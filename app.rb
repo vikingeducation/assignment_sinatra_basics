@@ -1,9 +1,13 @@
 #!/usr/bin/env ruby
 require 'sinatra'
+require 'erb'
 require 'pry-byebug'
+require './helpers/rps_helper.rb'
+
+helpers RPSHelper
 
 get '/' do
-
+  erb :index
 end
 
 get '/boss' do
@@ -15,5 +19,10 @@ post '/boss' do
   input = params[:say_string]
 
   erb :show_shout, locals: { input: input }
-  
+
+end
+
+post '/rps' do
+  play = params[:play]
+  erb :play, locals: { victory: game_winner(play)  }
 end
