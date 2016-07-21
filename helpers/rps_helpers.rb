@@ -6,7 +6,11 @@ module RPSHelpers
 
   def who_won?(player_move, computer_move)
     winning_combos = {'r' => 's', 's' => 'p', 'p' => 'r'}
-    winner = winning_combos[player_move] == player_move ? 'You' : 'Computer'
+    if player_move == computer_move
+      return "No one"
+    else
+      winner = winning_combos[player_move] == computer_move ? 'You' : 'Computer'
+    end
   end
 
 end
