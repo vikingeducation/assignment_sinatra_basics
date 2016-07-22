@@ -1,14 +1,22 @@
 require 'sinatra'
 require 'erb'
 
+helpers do
+  def robot
+    results = ["You win!", "You lose!", "It's a draw!"]
+    return results[rand(3)]
+  end
+
+end
+
 get '/' do
 
-  erb :boss
+  erb :rps
 end
 
 post '/' do
-  say = params[:said].upcase
-
-  "<h1>WHAT DO YOU MEAN, '#{say}'???? YOU'RE FIRED!!</h1>"
+  hand = params[:hand]
+  response = robot
+  "<h1>You chose #{hand}, #{response}</h1>"
 
 end
