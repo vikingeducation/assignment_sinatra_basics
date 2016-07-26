@@ -15,14 +15,14 @@ end
 
 helpers do
   def winner(player_hand, ai_hand)
-    if ((player_hand == 'rock' && ai_hand == "scissors") ||
-       (player_hand == 'paper' && ai_hand == "rock") ||
-       (player_hand == 'scissors' && ai_hand == "paper"))
-       return "You"
-     elsif (player_hand == ai_hand)
-        return nil
-      else
-        return "AI"
+    if (player_hand == ai_hand)
+      return nil
+    elsif ((player_hand == 'rock' && ai_hand == "scissors") ||
+      (player_hand == 'paper' && ai_hand == "rock") ||
+      (player_hand == 'scissors' && ai_hand == "paper"))
+      return "You"
+    else
+      return "AI"
      end
   end
 end
