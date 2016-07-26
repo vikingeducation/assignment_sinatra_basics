@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'pry-byebug'
 
 get '/boss' do
   erb :input
