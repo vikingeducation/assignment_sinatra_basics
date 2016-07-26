@@ -1,0 +1,13 @@
+<% if winner %>
+  <h2> <%= winner %> won last game!</h2>
+<% else %>
+  <h2> Last game was a tie!</h2>
+<% end %>
+<p> You had chosen "<%= your_hand %>" and AI had chosen "<%= ai_hand %>"</p>
+<form action="rps" method="post">
+  <input type="radio" name="hand" value="rock" checked> Rock<br>
+  <input type="radio" name="hand" value="paper"> Paper<br>
+  <input type="radio" name="hand" value="scissors"> Scissors
+  <input type = "submit" value = "Submit!" >
+</form>
+
