@@ -1,0 +1,6 @@
+<h2>The winner is:</h2>
+<% if win?(ai_sample, user) %>
+  <h3>User has won!</h3>
+<% elsif lose?(ai_sample, user) %>
+    <h3>AI has won!</h3>
+<% end %>
