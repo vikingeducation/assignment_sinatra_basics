@@ -1,0 +1,8 @@
+<h2>The winner is:</h2>
+<% if win?(ai, user) %>
+  <h3>You won!</h3>
+<% elsif tie?(ai, user) %>
+  <h3>It was a tie!</h3>
+<% else %>
+  <h3>You lost!</h3>
+<% end %>
