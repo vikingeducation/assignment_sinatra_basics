@@ -1,1 +1,16 @@
 <h1> Your outcome is <%= result %>!</h1>
+<br>
+
+<h1>
+<% if result == "win" %>
+Congrats, you really know how to pick em
+<% elsif result == "lose" %>
+You need to practice more
+<% else %>
+You fought hard, but no one wins this time
+<% end %>
+</h1>
+
+<form action="/" method="get">
+<input type="submit" value="Play again!">
+</form>
