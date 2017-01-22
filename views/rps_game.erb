@@ -1,0 +1,15 @@
+<% ai = %w(rock paper scissor).sample %>
+<% if (choice == 'rock' && ai == 'scissor') || (choice == 'paper' && ai == 'rock') || (choice == 'scissor' && ai == 'paper') %>
+  <% result = 'win'%>
+<% elsif choice == ai %>
+  <% result = 'tie' %>
+<% else %>
+  <% result = 'lose' %>
+<% end %>
+<h1>You have selected <%= choice %>!</h1>
+<h1>The computer has selected <%= ai %>!</h1>
+<% if result == 'tie' %>
+  <h1>It's a <%= result %>!</h1>
+<% else %>
+  <h1>You <%= result %>!</h1>
+<% end %>
