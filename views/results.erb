@@ -1,13 +1,10 @@
 <% 
-computer = %w{1 2 3}.sample
-moves = { '1' => 'rock',
-		'2' => 'paper',
-		'3' => 'scissors'
-}
+moves = ['rock', 'paper', 'scissors']
+computer = [0, 1, 2].sample
 	%>
 <% if computer == move %>
 <h2>It's a tie!</h2>
-<% elsif move.to_i - computer.to_i == 1 %>
+<% elsif move - computer == 1 %>
 <h2>Congralations, you've won!</h2>
 <% else %>
 <h2>Sorry, you've lost!</h2>
