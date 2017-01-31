@@ -1,0 +1,13 @@
+<% 
+moves = ['rock', 'paper', 'scissors']
+computer = [0, 1, 2].sample
+	%>
+<% if computer == move %>
+<h2>It's a tie!</h2>
+<% elsif move - computer == 1 %>
+<h2>Congralations, you've won!</h2>
+<% else %>
+<h2>Sorry, you've lost!</h2>
+<% end %>
+<p>You played <%= moves[move] %></p>
+<p>The computer played <%= moves[computer] %></p>
