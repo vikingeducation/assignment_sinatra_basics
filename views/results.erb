@@ -1,0 +1,16 @@
+<% 
+computer = %w{1 2 3}.sample
+moves = { '1' => 'rock',
+		'2' => 'paper',
+		'3' => 'scissors'
+}
+	%>
+<% if computer == move %>
+<h2>It's a tie!</h2>
+<% elsif move.to_i - computer.to_i == 1 %>
+<h2>Congralations, you've won!</h2>
+<% else %>
+<h2>Sorry, you've lost!</h2>
+<% end %>
+<p>You played <%= moves[move] %></p>
+<p>The computer played <%= moves[computer] %></p>
