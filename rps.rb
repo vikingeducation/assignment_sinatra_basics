@@ -8,38 +8,39 @@ class RockPaperScissors
     @moves = {1 => "rock", 2 => "paper", 3 => "scissors"}
   end
 
+  def lose
+    "You Lose"
+  end
+
+  def win
+    "You Win"
+  end
+
+  def draw
+    "Draw"
+  end
+
   def rock_rules m2
-    if m2 == 2
-      "Lose"
-    else
-      "Win"
-    end
+    m2 == 2 ? lose : win
   end
 
   def paper_rules m2
-    if m2 == 1
-      "Win"
-    else
-      "Lose"
-    end
+    m2 == 1 ? win : lose
   end
 
   def scissors_rules m2
-    if m2 == 1
-      "Lose"
-    else
-      "Win"
-    end
+    m2 == 1 ? lose : win
   end
 
   def winner m1, m2
-    if m1 == m2
-      "Draw"
-    elsif m1 == 1
+    case m1
+    when m2
+      draw
+    when 1
       rock_rules(m2)
-    elsif m1 == 2
+    when 2
       paper_rules(m2)
-    else
+    when 3
       scissors_rules(m2)
     end
   end
@@ -52,6 +53,12 @@ class RockPaperScissors
     moves[move]
   end
 
+  def play(player_move)
+    ai_move = make_move
+    result = winner(player_move, ai_move)
+    [translate_move(player_move), translate_move(ai_move), result]
+  end
+
 end
 
 get "/rps" do
@@ -62,9 +69,7 @@ end
 
 post "/rps" do
   rps = RockPaperScissors.new
-  player_move, ai_move = params[:move].to_i, rps.make_move
-  result = rps.winner(player_move, ai_move)
-  player_move, ai_move = [player_move, ai_move].map{ |m| rps.translate_move(m) }
+  player_move, ai_move, result = rps.play(params[:move].to_i)
   locals = {locals: {player_move: player_move, ai_move: ai_move, result: result}}
   erb :rps, locals
 end
