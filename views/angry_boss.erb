@@ -1,0 +1,8 @@
+<% if message %>
+  <%= message %>
+<% else %>
+  <form action="/angry-boss" method="post">
+    <input type="text" name="message">
+    <input type="submit">
+  </form>
+<% end %>
