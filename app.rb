@@ -18,18 +18,18 @@ end
 
 helpers do 
 	def cpu_choice
-		num = rand(3) + 1
+		cpu = %w(rock paper scissors)
+		return cpu.sample
 	end
 
 	def win?(cpu_choice, choice)
-		  #puts losing combinations
-	    puts "You Lose!" if choice == 1 && cpu_choice == 2 || choice == 2 && cpu_choice == 3
-		  #puts wining combinations
-		  puts "You Win!" if choice == 1 && cpu_choice == 3 || choice == 3 && cpu_choice == 2 || choice == 2 && cpu_choice == 1
-		  #puts draw if computer and plater pick the same 
-		  puts "Draw!" if choice == cpu_choice
-
+		if cpu_choice == 'rock'  && choice == 'paper' ||
+			 cpu_choice == 'paper' && choice == 'scissor' ||
+			 cpu_choice == 'scissor' && choice == 'rock'
+		end
+	 
 	end
+	def lose?(cpu_choice, choice)
 	end
 
 post '/result' do 
