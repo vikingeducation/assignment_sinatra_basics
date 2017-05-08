@@ -1,1 +1,8 @@
-<h1> <%=win? %></h1>
+<% if win? %>
+<h1> You win %></h1>
+
+<% elsif lose? %>
+<h1> You lose</h1>
+
+<% else %>
+<h1>Draw</h1>

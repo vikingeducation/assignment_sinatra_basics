@@ -30,14 +30,18 @@ helpers do
 	 
 	end
 	def lose?(cpu_choice, choice)
+		 cpu_choice == 'rock'  && choice == 'scissor' ||
+     cpu_choice == 'paper' && choice == 'rock' ||
+     cpu_choice == 'scissor' && choice == 'paper'
 	end
 
 post '/result' do 
 	choice = params[:player_choice]
 	cpu = cpu_choice
-	result = win?
+	lose = lose?
+	win = win?
 	
 
-	erb :result, locals: { player_choice: choice, cpu: cpu}
+	erb :result, locals: { player_choice: choice, cpu: cpu, win: win, lose: lose}
 
 	end
