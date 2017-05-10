@@ -6,10 +6,10 @@ get "/" do
   redirect to("/choose")
 end
 
-get "/choose" do
-  erb :choose
+get "/rps" do
+  erb :rps
 end
 
-post "/choose" do
+post "/rps" do
   erb :result
 end
