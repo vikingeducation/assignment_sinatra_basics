@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>And the results are..</title>
+</head>
+<body>
+  <h1>Results of this round:</h1>
+  <p>Player's move: <%= player_move.capitalize %></p>
+  <p>Computer's move: <%= computer_move.capitalize %></p>
+  <% if winner == :tie %>
+    <p>The result is a tie!</p>
+  <% else %>
+    <p>The <%= winner.to_s.capitalize %> wins!</p>
+  <% end %>
+</body>
+</html>
