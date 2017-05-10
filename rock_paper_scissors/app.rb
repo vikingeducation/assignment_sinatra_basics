@@ -3,7 +3,7 @@ require 'erb'
 require 'pry-byebug'
 
 get "/" do
-  redirect to("/choose")
+  redirect to("/rps")
 end
 
 get "/rps" do
