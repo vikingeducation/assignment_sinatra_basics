@@ -11,4 +11,9 @@ get "/boss" do
 end
 
 post "/boss" do
+  my_say = params[:my_say]
+
+  boss_reply = "WHAT DO YOU MEAN, '#{my_say.upcase}'???? YOU'RE FIRED!!"
+
+  erb :boss_replies, :locals => { :boss_reply => boss_reply }
 end
