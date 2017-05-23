@@ -1,2 +1,2 @@
 # assignment_sinatra_basics
-I coded... my way...
+# Andrea A
