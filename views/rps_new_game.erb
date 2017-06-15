@@ -1,0 +1,28 @@
+<h1>Rock, Paper, Scissors -- not Lizard, Spock</h1>
+<p>
+  Welcome to Rock Paper Scissors Not Lizard Spock,
+  a typical, old-school game.
+</p>
+
+<h2>Rules</h2>
+<h3>Simple</h3>
+<ul>
+  <li>rock beats scissors</li>
+  <li>scissors beat paper</li>
+  <li>paper beats rock</li>
+</ul>
+
+<p>You and the computer throw your choice and we see who's standing.</p>
+
+<h2>Ready to roll? Throw down!</h2>
+<form action="/rps/throw_down" method="post">
+  <fieldset>
+    <legend>Throws</legend>
+    <input type="radio" name="throw" value="rock" checked="checked">Rock<br>
+    <input type="radio" name="throw" value="paper">Paper<br>
+    <input type="radio" name="throw" value="scissors">Scissors<br>
+  </fieldset>
+  <input type="submit" value="Throw it!">
+</form>
+
+<h2><%= conclusion %></h2>
