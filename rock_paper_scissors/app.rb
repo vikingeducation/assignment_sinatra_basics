@@ -63,5 +63,5 @@ post '/game' do
   comp_selection = options.sample
   user_selection = params[:move]
   who_won = determine_winner(comp_selection, user_selection)
-  erb :winner, locals: { who_won: who_won, comp: comp_selection, user: user_selection }
+  erb :winner, locals: { the_winner: who_won, comp: comp_selection, user: user_selection }
 end
