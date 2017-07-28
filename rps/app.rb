@@ -9,9 +9,8 @@ end
 
 post '/rps_form' do
   p_num = params[:p_choice].to_i
-  p_num = 0
-    c_num = get_comp_num
-    outcome_str = get_outcome(c_num, p_num)
+  c_num = get_comp_num
+  outcome_str = get_outcome(c_num, p_num)
   erb :outcome, locals: {player_choice: num_to_str(p_num), comp_choice: num_to_str(c_num), outcome_str: outcome_str}
 end
 
