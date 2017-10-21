@@ -1,0 +1,15 @@
+<%ai_decision=["paper","rock","scissors"][rand(3)]%>
+
+<%def check_victory(ai_decision, h_decision)%>
+  <%if ai_decision == "paper" && h_decision == "rock" || ai_decision == "rock" && h_decision == "scissors" || ai_decision == "scissors" && h_decision == "rock"%>
+    Computer
+  <%elsif ai_decision == "rock" && h_decision == "paper" || ai_decision == "scissors" && h_decision == "rock" || ai_decision == "paper" && h_decision == "scissors"%>
+    You
+  <%else%>
+    Draw!! NOONE
+  <%end%>
+<%end%>
+
+
+<h2>Computer chose <%=ai_decision%> and you chose <%=h_decision%></h2>
+<h1><%check_victory(ai_decision, h_decision)%> WON !!!!!!!</h1>
