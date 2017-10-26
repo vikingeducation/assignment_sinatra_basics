@@ -2,10 +2,11 @@
 <p>Choose your weapon</p>
 
 <form action="/" method="post">
+
   <% WEAPONS_LIB.each do |key, name| %>
     <input type="radio" name="human_choice" value="<%= key %>"> <%= name %><br>
   <% end %>
+
   <br>
   <input type="submit" value="Submit!">
-
 </form>
